@@ -26,7 +26,9 @@
     
 \end{definition}
 
-\subsection{Inductive Sets}
+\subsection{Natural Number Set $\omega$}
+
+\subsubsection{Inductive Sets}
 
 In this section, we will construct natural numbers under the 
 architecture of set theory.
@@ -108,7 +110,7 @@ architecture of set theory.
 \end{proof}
 
 \begin{theorem}{}{}
-    The set $\omega$ is inductive and is a subset of every inductive set. Hence $\omega$ is the smallest inductive set. 
+    The set $\omega$ is inductive and is a subset of every inductive set. Hence $\omega$ is the \textbf{smallest inductive set}. 
 \end{theorem}
 
 \begin{corollary}{Principle of Mathematical Induction}{label:PMI}
@@ -143,15 +145,82 @@ architecture of set theory.
 
         \item Obviously, $0 \in I$.
         \item Let $n \in I$, then $n = 0 \lor n = k^{+} \text{ for some } k \in \omega$. 
-        We get $n^{+} = 0^{+} \lor n^{+} = (k^{+})^{+}$
-        where $k^{+} \in \omega$. Thus $n^{+} \in I$.
+        \begin{enumerate}
+
+            \item If $n = 0$, then $n^{+} = 0^{+}$, so $n^{+} \in I$.
+            \item If $n = k^{+} \ \text{for some}\ k \in \omega$, then $n^{+} = 
+            (k^{+})^{+}$, so $n^{+} \in I$.
+
+        \end{enumerate}
 
     \end{itemize}
     By \Cref{label:PMI}, $I = \omega$.
 \end{proof}
 
-\begin{theorem}{Recursion Theorem}{}
+\subsubsection{Transitive Sets}
+
+There are some other important properties on natural numbers, such as
+
+\begin{enumerate}
+
+    \item $0 \in 1 \in 2 \in 3 \in 4 \in ...$
+    \item $0 \subseteq 1 \subseteq 2 \subseteq 3 \subseteq 4 \subseteq ...$ 
     
+\end{enumerate}
+
+\begin{definition}{Transitive Sets}{}
+    The set $A$ is called a \textbf{transitive set} if $\forall x \in A(x \subseteq A)$. In other words, every member of $A$ is also a subset of $A$.\\
+    or more rigorously
+    \begin{equation*}
+        A \text{ is transitive } \iff (\forall a \in A)(\forall x \in a)(x \in A)
+    \end{equation*}
+\end{definition}
+
+\begin{proposition}{}{}
+    Let $A$ be a set
+    \begin{equation*}
+        A \text{ is transitive } \iff \bigcup A \subseteq A 
+    \end{equation*}
+\end{proposition}
+
+\begin{proposition}{}{}
+    Let $A$ be a transitive set. Then
+    \begin{equation*}
+        \bigcup A^{+} = A
+    \end{equation*}
+\end{proposition}
+
+\begin{proof}
+    
+\end{proof}
+
+\begin{proposition}{}{}
+    For all $m,n \in \omega$, if $n^{+} = m^{+}$, then $n = m$.
+\end{proposition}
+
+\begin{theorem}{}{}
+    Every natural number is transitive set.
 \end{theorem}
 
+\begin{proof}
+    We proof by induction. Let
+    \begin{equation*}
+        I = \{ n \in \omega : n \text{ is transitive}\}
+    \end{equation*}
+    Clearly, $0 \in I$. Let $n \in I$. We need to show that $n^{+} \in I$ and just $\bigcup n^{+} \subseteq n^{+}$.\\
+    Firstly, $\bigcup n^{+} = n$, and $n \subseteq n^{+}$, Hence
+    \begin{equation*}
+        \bigcup n^{+} \subseteq n^{+}
+    \end{equation*}
+    By induction, $I = \omega$.
+\end{proof}
 
+\begin{theorem}{}{}
+    The set $\omega$ is a transitive set.
+\end{theorem}
+
+\begin{proof}
+    we shall prove $\forall n \in \omega(n \subseteq \omega)$ by induction.
+\end{proof}
+
+\subsection{Recursion Theorem on $\omega$}
