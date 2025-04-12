@@ -1,0 +1,83 @@
+%%%%%%%%%%%%
+% Preamble %
+%%%%%%%%%%%%
+\input{../preamble.tex}
+\title{Topology}
+\author{Aiken Ji}
+\date{\today} 
+
+%%%%%%%%%%%%
+% Document %
+%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+
+\newpage
+
+\definecolor{tcol_CNT1}{HTML}{72E094} % First color for Contents
+\definecolor{tcol_CNT2}{HTML}{24E2D6} % Second color for Contents
+\definecolor{tcol_CNV1}{HTML}{8E44AD} % First color for Conventions
+\definecolor{tcol_CNV2}{HTML}{A10B49} % First color for Conventions
+
+\begin{tcolorbox}[enhanced,
+    title=Contents,
+    fonttitle=\fontsize{20}{24}\sffamily\bfseries\selectfont,
+    coltitle=black,
+    fontupper=\sffamily,
+    interior style={left color=tcol_CNT1!80,right color=tcol_CNT2!80},
+    frame style={left color=tcol_CNT1!60!black,right color=tcol_CNT2!60!black},
+    attach boxed title to top center={yshift=10pt},
+    boxed title style={frame hidden,
+        interior style={left color=tcol_CNT1,right color=tcol_CNT2},
+        frame style={left color=tcol_CNT1!60!black,right color=tcol_CNT2!60!black},
+        height=24pt,bean arc,drop fuzzy shadow
+    },
+    top=2mm,bottom=2mm,left=2mm,right=2mm,
+    before skip=20mm,after skip=20mm,
+    drop fuzzy shadow,breakable]
+%
+\makeatletter
+\@starttoc{toc}
+\makeatother
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced,
+    frame hidden,
+    title=Conventions,
+    fonttitle=\large\sffamily\bfseries\selectfont,
+    interior code={
+        \shade[top color=tcol_CNV2!50,bottom color=white] ([yshift=2mm]interior.north west) arc(-180:-90:2mm)--(interior.north east)--(interior.south east)--(interior.south west)--cycle;
+        },
+    overlay={
+        \draw[tcol_CNV1!50!black,line width=0.5mm] ([xshift=2mm]frame.north west)--(frame.north east);
+    },
+    boxrule=0pt,left=2pt,right=2pt,
+    sharp corners=north,
+    attach boxed title to top left,
+    boxed title style={interior hidden,
+    left=1mm,right=1mm,
+    frame code={
+        \path[draw=tcol_CNV1!50!black,line width=0.5mm,fill=tcol_CNV1,rounded corners=2mm] ([xshift=2mm]frame.south east)--(frame.south east)--(frame.north east)--([xshift=0.25mm]frame.north west)--([xshift=0.25mm]frame.south west)--cycle;}
+    },
+    top=2mm,bottom=2mm,left=2mm,right=2mm,
+    before skip=10mm,after skip=10mm]
+%
+$\F$ denotes either $\R$ or $\C$.\\
+$\N$ denotes the set $\{1,2,3,\ldots\}$ of natural numbers (excluding $0$).\\
+Inner products are taken to be linear in the first argument and conjugate linear in the second.\\
+The Einstein summation convention is used for tensors unless otherwise specified.
+\end{tcolorbox}
+
+\newpage
+
+\input{lec_01.tex}
+\newpage
+% \input{lec_02.tex}
+% \newpage
+% \input{lec_03.tex}
+% \newpage
+% \input{lec_04.tex}
+% \newpage    
+
+\end{document}

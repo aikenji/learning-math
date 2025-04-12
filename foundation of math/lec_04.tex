@@ -3,87 +3,92 @@
 \subsection{Finite Sets}
 
 \begin{definition}{Finite Set}{}
-    A set $X$ is \textbf{finite} iff there exits an injection $f: X \to n$ for some natural number n.
+  A set $X$ is \textbf{finite} iff there exits an injection $f: X \to
+  n$ for some natural number n.
 \end{definition}
 
 \begin{definition}{Number of elements}{}
-    Suppose that $X$ is a finite set. Let $n$ be the least number s.t. there is 
-    an injection $f: X \to n$. Then $n$ is the \textbf{number of elements} in $X$, 
-    and we write $|X| = n$.
+  Suppose that $X$ is a finite set. Let $n$ be the least number s.t. there is
+  an injection $f: X \to n$. Then $n$ is the \textbf{number of elements} in $X$,
+  and we write $|X| = n$.
 \end{definition}
 
 \begin{theorem}{}{}
-    Let $A$ be finite and $|A| = n$. If $f: A \to n$ is injective, then $f$ is surjective.
+  Let $A$ be finite and $|A| = n$. If $f: A \to n$ is injective, then
+  $f$ is surjective.
 \end{theorem}
 
 \begin{proof}
-    If $A$ is empty, then $f$ is vacuously surjective. Assume $A$ is not empty. 
-    Suppose $f$ is not surjective, and let $k \in n \text{\ and\ } k \notin ran(f)$. 
+  If $A$ is empty, then $f$ is vacuously surjective. Assume $A$ is not empty.
+  Suppose $f$ is not surjective, and let $k \in n \text{\ and\ } k
+  \notin ran(f)$.
 \end{proof}
 
 \begin{corollary}{}{}
-    If $A$ is finite and $|A| = n$, then there is a bijection $f: A \to n$.
+  If $A$ is finite and $|A| = n$, then there is a bijection $f: A \to n$.
 \end{corollary}
 
 \begin{theorem}{}{}
-    Let $f: A \to A$ be injective and $A$ is finite. Then $f$ is surjective.
+  Let $f: A \to A$ be injective and $A$ is finite. Then $f$ is surjective.
 \end{theorem}
 
 \begin{corollary}{Property of infinite set}{}
-    Let $f: A \to A$ be injective and not surjective. Then $A$ is infinite.
+  Let $f: A \to A$ be injective and not surjective. Then $A$ is infinite.
 \end{corollary}
 
 \begin{theorem}{}{}
-    Let $A$ and $B$ be finite sets. Then there is a bijection $f: A \to B$ iff $|A| = |B|$.
+  Let $A$ and $B$ be finite sets. Then there is a bijection $f: A \to
+  B$ iff $|A| = |B|$.
 \end{theorem}
 
 \begin{theorem}{}{}
-    For all natural numbers $n$, $|n| = n$.
+  For all natural numbers $n$, $|n| = n$.
 \end{theorem}
 
 \begin{proof}{}{}
-    
+
 \end{proof}
 
 \begin{corollary}{Pigeonhole Principle}{}
-    Let $m$ and $n$ be natural numbers and $f: n \to m$. If $m < n$, then $f$ is not injective.
+  Let $m$ and $n$ be natural numbers and $f: n \to m$. If $m < n$,
+  then $f$ is not injective.
 \end{corollary}
 
 \begin{theorem}{}{}
-    The set $\omega$ is an infinite set.
+  The set $\omega$ is an infinite set.
 \end{theorem}
 
 \begin{corollary}{}{}
-    If $G: \omega \to A$ is injective, then $A$ is an infinite set.
+  If $G: \omega \to A$ is injective, then $A$ is an infinite set.
 \end{corollary}
 
 \begin{lemma}{Dual version of Pigeonhole Principle}{}
-    If $m < n$ and $f: m \to n$, then $f$ is not surjective.
+  If $m < n$ and $f: m \to n$, then $f$ is not surjective.
 \end{lemma}
 
 \begin{theorem}{}{}
-    If $N$ is finite and $f: N \to N$ is surjective, then $f$ is injective.
+  If $N$ is finite and $f: N \to N$ is surjective, then $f$ is injective.
 \end{theorem}
 
 \begin{theorem}{}{}
-    If $A$ is a finite set, then $\mathcal{P}(A)$ is finite.
+  If $A$ is a finite set, then $\mathcal{P}(A)$ is finite.
 \end{theorem}
 
 \subsection{Countable Sets}
 
 \begin{definition}{Countable Set}{}
-    A set $X$ is countable iff there is injection $f :X \to \omega$.
+  A set $X$ is countable iff there is injection $f :X \to \omega$.
 \end{definition}
 
 \begin{definition}{}{}
-    A set $X$ is countably infinite iff it is countable and infinite.
+  A set $X$ is countably infinite iff it is countable and infinite.
 \end{definition}
 
 \begin{theorem}{}{}
-    Let $A$ and $B$ are sets where $B$ is countable. If there is an
-    injection $f: A \to B$, then $A$ is countable.
+  Let $A$ and $B$ are sets where $B$ is countable. If there is an
+  injection $f: A \to B$, then $A$ is countable.
 \end{theorem}
 
 \begin{theorem}{}{}
-    If $B$ is countable set and $A \subset B$, then $A$ is countable.
+  If $B$ is countable set and $A \subset B$, then $A$ is countable.
 \end{theorem}
