@@ -3,27 +3,27 @@
 \subsection{Peano Postulates}
 
 \begin{definition}{}{}
-  Let $S : N \to N$ and let $A \subseteq N$. Then $A$ is said to be
-  closed under $S$ iff
-  \begin{equation*}
-    S(x) \in A \text{ for all } x \in A
-  \end{equation*}
+    Let $S : N \to N$ and let $A \subseteq N$. Then $A$ is said to be
+    closed under $S$ iff
+    \begin{equation*}
+        S(x) \in A \text{ for all } x \in A
+    \end{equation*}
 \end{definition}
 
 \begin{definition}{Peano System}{}
-  Let $(N,S,e)$ be an ordered triple that consists of a set $N$, a
-  function $S : N \to N$, and an element $e \in N$. Then $(N,S,e)$
-  is a \textbf{Peano system} if the following conditions hold:
-  \begin{enumerate}
+    Let $(N,S,e)$ be an ordered triple that consists of a set $N$, a
+    function $S : N \to N$, and an element $e \in N$. Then $(N,S,e)$
+    is a \textbf{Peano system} if the following conditions hold:
+    \begin{enumerate}
 
-    \item $e \notin ranS$
-    \item $S$ is injective.
-    \item For all $A \subseteq N$
-      \begin{equation*}
-        e \in A \land A \text{ is closed under } S \implies A = N
-      \end{equation*}
+        \item $e \notin ranS$
+        \item $S$ is injective.
+        \item For all $A \subseteq N$
+            \begin{equation*}
+                e \in A \land A \text{ is closed under } S \implies A = N
+            \end{equation*}
 
-  \end{enumerate}
+    \end{enumerate}
 
 \end{definition}
 
@@ -35,129 +35,130 @@ In this section, we will construct natural numbers under the
 architecture of set theory.
 
 \begin{definition}{Successor}{}
-  For each set $x$, the \textbf{successor} $x^{+}$ is the set defined by
-  \begin{equation*}
-    x^{+} = x \cup \{x\}
-  \end{equation*}
+    For each set $x$, the \textbf{successor} $x^{+}$ is the set defined by
+    \begin{equation*}
+        x^{+} = x \cup \{x\}
+    \end{equation*}
 \end{definition}
 
 \begin{proposition}{}{}
-  \begin{enumerate}
+    \begin{enumerate}
 
-    \item $a \in x^{+} \iff a \in x \lor a = x$
-    \item $x \in x^{+}$
-    \item $x \subseteq x^{+}$
+        \item $a \in x^{+} \iff a \in x \lor a = x$
+        \item $x \in x^{+}$
+        \item $x \subseteq x^{+}$
 
-  \end{enumerate}
+    \end{enumerate}
 \end{proposition}
 
 \begin{example}
-  The first few natural numbers as follows
-  \begin{itemize}
+    The first few natural numbers as follows
+    \begin{itemize}
 
-    \item $0 = \varnothing$
-    \item $1 = \{0\}$
-    \item $2 = \{0,1\}$
-    \item $3 = \{0,1,2\}$
-    \item $4 = \{0,1,2,3\}$
+        \item $0 = \varnothing$
+        \item $1 = \{0\}$
+        \item $2 = \{0,1\}$
+        \item $3 = \{0,1,2\}$
+        \item $4 = \{0,1,2,3\}$
 
-  \end{itemize}
+    \end{itemize}
 \end{example}
 
 \begin{definition}{Inductive}{}
-  A set $I$ is said to be \textbf{inductive} iff
-  \begin{enumerate}
+    A set $I$ is said to be \textbf{inductive} iff
+    \begin{enumerate}
 
-    \item $\varnothing \in I$
-    \item $\forall a \in I (a^{+} \in I)$
+        \item $\varnothing \in I$
+        \item $\forall a \in I (a^{+} \in I)$
 
-  \end{enumerate}
-  The second one can be also restated as "The set is closed under successor."
+    \end{enumerate}
+    The second one can be also restated as "The set is closed under successor."
 \end{definition}
 
 \begin{lemma}{Infinity Axiom}{}
-  There is a inductive set.
-  \begin{equation*}
-    \exists I (\varnothing \in I \land \forall x \in I(x^{+} \in I))
-  \end{equation*}
+    There is a inductive set.
+    \begin{equation*}
+        \exists I (\varnothing \in I \land \forall x \in I(x^{+} \in I))
+    \end{equation*}
 \end{lemma}
 
 \begin{definition}{Natural Numbers}{}
-  A \textbf{natural number} is an element that belongs to every
-  inductive sets. In other words, $x$ is a natural number iff
-  $x$ in every inductive sets.
+    A \textbf{natural number} is an element that belongs to every
+    inductive sets. In other words, $x$ is a natural number iff
+    $x$ in every inductive sets.
 \end{definition}
 
 \begin{definition}{Natural Number Set}{}
-  There exits a unique set $\omega$ such that for all $x$
-  \begin{equation*}
-    x \in \omega \iff x \text{ in every inductive set}
-  \end{equation*}
-  We denote the set as
-  \begin{equation*}
-    \omega = \{x : x \text{ in every inductive set}\}
-  \end{equation*}
+    There exits a unique set $\omega$ such that for all $x$
+    \begin{equation*}
+        x \in \omega \iff x \text{ in every inductive set}
+    \end{equation*}
+    We denote the set as
+    \begin{equation*}
+        \omega = \{x : x \text{ in every inductive set}\}
+    \end{equation*}
 \end{definition}
 
 \begin{proof}
-  By infinity axiom, there exits an inductive set $A$. And
-  \begin{equation*}
-    x \text{ in every inductive set } \implies x \in A.
-  \end{equation*}
-  By \Cref{class}, there is a unique set $\omega$ s.t.
-  \begin{equation*}
-    x \in \omega \iff x \text{ in every inductive set}
-  \end{equation*}
+    By infinity axiom, there exits an inductive set $A$. And
+    \begin{equation*}
+        x \text{ in every inductive set } \implies x \in A.
+    \end{equation*}
+    By \Cref{class}, there is a unique set $\omega$ s.t.
+    \begin{equation*}
+        x \in \omega \iff x \text{ in every inductive set}
+    \end{equation*}
 \end{proof}
 
 \begin{theorem}{}{}
-  The set $\omega$ is inductive and is a subset of every inductive
-  set. Hence $\omega$ is the \textbf{smallest inductive set}.
+    The set $\omega$ is inductive and is a subset of every inductive
+    set. Hence $\omega$ is the \textbf{smallest inductive set}.
 \end{theorem}
 
 \begin{corollary}{Principle of Mathematical Induction}{label:PMI}
-  If $I$ is inductive and $I \subseteq \omega$, then $I = \omega$.
+    If $I$ is inductive and $I \subseteq \omega$, then $I = \omega$.
 \end{corollary}
 
 \begin{remarks}
-  Suppose $P(n)$ is some property. To prove by induction that
-  \begin{equation*}
-    \forall n \in \omega P(n)
-  \end{equation*}
-  We just let $I = \{n \in \omega : P(n)\} \subseteq \omega$
-  If we can prove that
-  \begin{enumerate}
+    Suppose $P(n)$ is some property. To prove by induction that
+    \begin{equation*}
+        \forall n \in \omega P(n)
+    \end{equation*}
+    We just let $I = \{n \in \omega : P(n)\} \subseteq \omega$
+    If we can prove that
+    \begin{enumerate}
 
-    \item $0 \in I$
-    \item $n \in I \implies n^{+} \in I$
+        \item $0 \in I$
+        \item $n \in I \implies n^{+} \in I$
 
-  \end{enumerate}
-  Then $I = \omega$, by \Cref{label:PMI}. Therefore $P(n)$ holds
-  for all natural numbers.
+    \end{enumerate}
+    Then $I = \omega$, by \Cref{label:PMI}. Therefore $P(n)$ holds
+    for all natural numbers.
 \end{remarks}
 
 \begin{theorem}{}{}
-  For every $n \in \omega$, either $n = 0$, or $n = k^{+}$ for
-  some $k \in \omega$.
+    For every $n \in \omega$, either $n = 0$, or $n = k^{+}$ for
+    some $k \in \omega$.
 \end{theorem}
 
 \begin{proof}
-  Let $I = \{n \in \omega: n = 0 \lor \exists k \in \omega(n = k^{+})\}$\\
-  \begin{itemize}
+    Let $I = \{n \in \omega: n = 0 \lor \exists k \in \omega(n = k^{+})\}$\\
+    \begin{itemize}
 
-    \item Obviously, $0 \in I$.
-    \item Let $n \in I$, then $n = 0 \lor n = k^{+} \text{ for some }
-      k \in \omega$.
-      \begin{enumerate}
+        \item Obviously, $0 \in I$.
+        \item Let $n \in I$, then $n = 0 \lor n = k^{+} \text{ for some }
+            k \in \omega$.
+            \begin{enumerate}
 
-        \item If $n = 0$, then $n^{+} = 0^{+}$, so $n^{+} \in I$.
-        \item If $n = k^{+} \ \text{for some}\ k \in \omega$, then $n^{+} =
-          (k^{+})^{+}$, so $n^{+} \in I$.
+                \item If $n = 0$, then $n^{+} = 0^{+}$, so $n^{+} \in I$.
+                \item If $n = k^{+} \ \text{for some}\ k \in \omega$,
+                    then $n^{+} =
+                    (k^{+})^{+}$, so $n^{+} \in I$.
 
-      \end{enumerate}
+            \end{enumerate}
 
-  \end{itemize}
-  By \Cref{label:PMI}, $I = \omega$.
+    \end{itemize}
+    By \Cref{label:PMI}, $I = \omega$.
 \end{proof}
 
 \subsubsection{Transitive Sets}
@@ -166,33 +167,34 @@ There are some other important properties on natural numbers, such as
 
 \begin{enumerate}
 
-  \item $0 \in 1 \in 2 \in 3 \in 4 \in ...$
-  \item $0 \subseteq 1 \subseteq 2 \subseteq 3 \subseteq 4 \subseteq ...$
+    \item $0 \in 1 \in 2 \in 3 \in 4 \in ...$
+    \item $0 \subseteq 1 \subseteq 2 \subseteq 3 \subseteq 4 \subseteq ...$
 
 \end{enumerate}
 
 \begin{definition}{Transitive Sets}{}
-  The set $A$ is called a \textbf{transitive set} if $\forall x \in
-  A(x \subseteq A)$. In other words, every member of $A$ is also a
-  subset of $A$.\\
-  or more rigorously
-  \begin{equation*}
-    A \text{ is transitive } \iff (\forall a \in A)(\forall x \in a)(x \in A)
-  \end{equation*}
+    The set $A$ is called a \textbf{transitive set} if $\forall x \in
+    A(x \subseteq A)$. In other words, every member of $A$ is also a
+    subset of $A$.\\
+    or more rigorously
+    \begin{equation*}
+        A \text{ is transitive } \iff (\forall a \in A)(\forall x \in
+        a)(x \in A)
+    \end{equation*}
 \end{definition}
 
 \begin{proposition}{}{}
-  Let $A$ be a set
-  \begin{equation*}
-    A \text{ is transitive } \iff \bigcup A \subseteq A
-  \end{equation*}
+    Let $A$ be a set
+    \begin{equation*}
+        A \text{ is transitive } \iff \bigcup A \subseteq A
+    \end{equation*}
 \end{proposition}
 
 \begin{proposition}{}{}
-  Let $A$ be a transitive set. Then
-  \begin{equation*}
-    \bigcup A^{+} = A
-  \end{equation*}
+    Let $A$ be a transitive set. Then
+    \begin{equation*}
+        \bigcup A^{+} = A
+    \end{equation*}
 \end{proposition}
 
 \begin{proof}
@@ -200,33 +202,33 @@ There are some other important properties on natural numbers, such as
 \end{proof}
 
 \begin{proposition}{}{}
-  For all $m,n \in \omega$, if $n^{+} = m^{+}$, then $n = m$.
+    For all $m,n \in \omega$, if $n^{+} = m^{+}$, then $n = m$.
 \end{proposition}
 
 \begin{theorem}{}{}
-  Every natural number is transitive set.
+    Every natural number is transitive set.
 \end{theorem}
 
 \begin{proof}
-  We proof by induction. Let
-  \begin{equation*}
-    I = \{ n \in \omega : n \text{ is transitive}\}
-  \end{equation*}
-  Clearly, $0 \in I$. Let $n \in I$. We need to show that $n^{+} \in
-  I$ and just $\bigcup n^{+} \subseteq n^{+}$.\\
-  Firstly, $\bigcup n^{+} = n$, and $n \subseteq n^{+}$, Hence
-  \begin{equation*}
-    \bigcup n^{+} \subseteq n^{+}
-  \end{equation*}
-  By induction, $I = \omega$.
+    We proof by induction. Let
+    \begin{equation*}
+        I = \{ n \in \omega : n \text{ is transitive}\}
+    \end{equation*}
+    Clearly, $0 \in I$. Let $n \in I$. We need to show that $n^{+} \in
+    I$ and just $\bigcup n^{+} \subseteq n^{+}$.\\
+    Firstly, $\bigcup n^{+} = n$, and $n \subseteq n^{+}$, Hence
+    \begin{equation*}
+        \bigcup n^{+} \subseteq n^{+}
+    \end{equation*}
+    By induction, $I = \omega$.
 \end{proof}
 
 \begin{theorem}{}{}
-  The set $\omega$ is a transitive set.
+    The set $\omega$ is a transitive set.
 \end{theorem}
 
 \begin{proof}
-  we shall prove $\forall n \in \omega(n \subseteq \omega)$ by induction.
+    we shall prove $\forall n \in \omega(n \subseteq \omega)$ by induction.
 \end{proof}
 
 \subsection{Recursion Theorem on $\omega$}
