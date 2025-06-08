@@ -1,5 +1,4 @@
 \section{Topological Spaces}
-
 \begin{definition}{Topological Spaces}{}
     Let $X$ be a non-empty set and $\tau$ is a collection of subsets
     $U$ of $X$. If
@@ -11,13 +10,26 @@
         \item $\bigcap_{i} U_{i} \in \tau$
 
     \end{enumerate}
-
-    Then we call $\tau$ the \textbf{topology} on $X$, and the pair
-    $(X,\tau)$ is called a \textbf{topological space}.
+    Then we refer to $\tau$ as the \textbf{topology} on $X$, and the pair
+    $(X,\tau)$ is called a \textbf{topological space}. For
+    simplicity, we may just refer to $X$ itself as the
+    topological space.
 \end{definition}
 
+\begin{remarks}
+    $\tau$ is a subset of $\mathcal{P}(X)$, and we call the subset
+    $U$ in $\tau$ the \textbf{open set}. So the three conditions
+    above can be reclaimed by
+    \begin{enumerate}
+        \item $\varnothing$, $X$ are open.
+        \item arbitrary union of open sets is open.
+        \item finite intersection of open sets is open.
+    \end{enumerate}
+\end{remarks}
+
 \begin{definition}{Discrete and Indiscrete Topology}{}
-    Let $X$ be any non-empty set and $\tau$ be the collection of subsets of $X$.
+    Let $X$ be any non-empty set and $\tau$ be the collection of
+    subsets of $X$.
     \begin{enumerate}
 
         \item If $\tau = \mathcal{P}(X)$, then $\tau$ is called the
@@ -28,4 +40,63 @@
             \textbf{indiscrete space}.
 
     \end{enumerate}
+\end{definition}
+
+\begin{proposition}{}{}
+    Suppose $X$ is a topological space. If for every $x \in X$, the
+    singleton $\{x\} \in \tau$, then $\tau$ is the
+    discrete topology.
+\end{proposition}
+
+\begin{proof}
+    Since $\tau \subseteq \mathcal{P}(X) $, we only need to show
+    $\mathcal{P}(X) \subseteq \tau $.\\
+    Take any subset $U \in \mathcal{P}(X) $, then $U$ can be expressed as
+    \begin{equation}
+        U = \bigcup_{x \in S} \{x\}
+    \end{equation}
+    Since every singletons are in $\tau$, so $U$ is also in $\tau$.
+    Thus $\mathcal{P}(X) \subseteq \tau$.
+\end{proof}
+
+\begin{definition}{Closed Set}{}
+    Let $X$ be a topological space. A subset $S$ of $X$ is said to be
+    a \textbf{closed set}, if its complement, namely $X \setminus S$,
+    is open in $X$.
+\end{definition}
+
+\begin{proposition}{}{}
+    Let $X$ be a topological space, then
+    \begin{enumerate}
+
+        \item $\varnothing$, $X$ are closed.
+        \item finite union of closed sets is closed.
+        \item arbitrary intersection of closed sets is closed.
+
+    \end{enumerate}
+\end{proposition}
+
+\begin{definition}{Clopen}{}
+    A subset $S$ of topological space $X$ is called clopen if it is
+    both open and closed.
+\end{definition}
+
+\begin{remarks}
+    \begin{enumerate}
+
+        \item In every topological space, both $\varnothing$ and
+            $X$ are clopen.
+        \item In the discrete space, all subsets of $X$ are clopen.
+        \item In the indiscrete space, the only clopen sets are
+            $\varnothing$ and $X$.
+
+    \end{enumerate}
+\end{remarks}
+
+\begin{definition}{Cofinite Topology}{}
+    Let $X$ be nonempty set. A topology $\tau$ on $X$ is called the
+    \textbf{finite-closed topology} or the \textbf{cofinite topology}
+    if the closed subsets are $X$ and all finite subsets of $X$. In
+    other words, the open sets are $\varnothing$ and all subsets which
+    have finite complements.
 \end{definition}
