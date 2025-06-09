@@ -1,4 +1,7 @@
 \section{Topological Spaces}
+
+\subsection{Basic Concepts}\label{sub:Basic Concepts} % (fold)
+
 \begin{definition}{Topological Spaces}{}
     Let $X$ be a non-empty set and $\tau$ is a collection of subsets
     $U$ of $X$. If
@@ -70,8 +73,8 @@
     \begin{enumerate}
 
         \item $\varnothing$, $X$ are closed.
-        \item finite union of closed sets is closed.
-        \item arbitrary intersection of closed sets is closed.
+        \item Finite union of closed sets is closed.
+        \item Arbitrary intersection of closed sets is closed.
 
     \end{enumerate}
 \end{proposition}
@@ -100,3 +103,20 @@
     other words, the open sets are $\varnothing$ and all subsets which
     have finite complements.
 \end{definition}
+% subsection Basic Concepts (end)
+
+\subsection{The Euclidean Topology}\label{sub:The Euclidean Topology} % (fold)
+
+\begin{definition}{Euclidean Topology on $\mathbb{R}$}{}
+    A subset $S$ in $\mathbb{R}$ is said to be open if for each $x
+    \in S$, there exit $a,b \in \mathbb{R}$, with $a < b$, s.t. $x
+    \in (a,b) \subseteq S$. We refer to this kind of topology as the
+    \textbf{euclidean topology on $\mathbb{R}$}.
+\end{definition}
+
+\begin{remarks}
+    Whenever we refer to the topological space $\mathbb{R}$ without
+    specifying the
+    topology, we mean $\mathbb{R}$ with the euclidean topology.
+\end{remarks}
+% subsection The Euclidean Topology (end)
