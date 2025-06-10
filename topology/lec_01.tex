@@ -119,4 +119,53 @@
     specifying the
     topology, we mean $\mathbb{R}$ with the euclidean topology.
 \end{remarks}
+
+To describe the euclidean topology on $\mathbb{R}$ in more convenient
+way, we introduce the notion of the basis for a topology.
+
+\begin{proposition}{}{}
+    A subset $S$ of $\mathbb{R}$ is open iff it is a union of open intervals.
+\end{proposition}
+
+\begin{proof}
+    We have to show that:
+    \begin{enumerate}
+
+        \item if S is union of open intervals, then it is an open set.
+        \item if S is an open set, then it is a union of open intervals.
+
+    \end{enumerate}
+    The first part is obvious. We only need to show the second part is true.\\
+    Assume that $S$ is open in $\mathbb{R}$, then for each $x \in S$, there
+    exits an interval $I_x = (a,b)$ s.t. $x \in I_x \subseteq S$.
+    We claim that $S = \bigcup_{x \in S} I_x$. In order to show that
+    two sets are equal, we need to prove that
+    \begin{enumerate}
+
+        \item $y \in S \implies y \in \bigcup_{x \in S} I_x$.
+        \item $y \in \bigcup_{x \in S} I_x \implies y \in S$.
+
+    \end{enumerate}
+    Firstly, let $y \in S$, then $y \in I_y$. Obviously, $y \in
+    \bigcup_{x \in S} I_x$.\\
+    Secondly, let $y \in \bigcup_{x \in S} I_x$, then $y \in I_z$ for
+    some $z \in S$. And $I_z \subseteq S$, Hence we conclude
+    that $y \in S$.
+\end{proof}
+
+The above discussion tells us that in order to give the whole
+topology of $\mathbb{R}$, it suffices to give just all open
+intervals. Then all other open sets can be expressed as unions of
+open intervals. This leads us to the concepts of basis.
+
+\begin{definition}{Basis}{}
+    Let $(X,\tau)$ be a topological space. A collection $\mathcal{B}$ of
+    open subsets of $X$ is said to be a \textbf{basis} for the
+    topology $\tau$ if every open set is a union of elements of $\mathcal{B}$.
+\end{definition}
+
+\begin{example}
+    Let $\mathcal{B} = \{(a,b): a,b \in \mathbb{R} \land a < b\}$.
+    Then $\mathcal{B}$ is a basis for the euclidean topology on $\mathbb{R}$.
+\end{example}
 % subsection The Euclidean Topology (end)
