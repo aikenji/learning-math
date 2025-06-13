@@ -2,7 +2,7 @@
 
 \subsection{Basic Concepts}\label{sub:Basic Concepts} % (fold)
 
-\begin{definition}{Topological Spaces}{}
+\begin{definition}{Topological Spaces}{def:Topological Spaces}
     Let $X$ be a non-empty set and $\tau$ is a collection of subsets
     $U$ of $X$. If
 
@@ -55,9 +55,9 @@
     Since $\tau \subseteq \mathcal{P}(X) $, we only need to show
     $\mathcal{P}(X) \subseteq \tau $.\\
     Take any subset $U \in \mathcal{P}(X) $, then $U$ can be expressed as
-    \begin{equation}
+    \begin{equation*}
         U = \bigcup_{x \in S} \{x\}
-    \end{equation}
+    \end{equation*}
     Since every singletons are in $\tau$, so $U$ is also in $\tau$.
     Thus $\mathcal{P}(X) \subseteq \tau$.
 \end{proof}
@@ -105,7 +105,7 @@
 \end{definition}
 % subsection Basic Concepts (end)
 
-\subsection{The Euclidean Topology}\label{sub:The Euclidean Topology} % (fold)
+\subsection{Basis}\label{sub:Basis} % (fold)
 
 \begin{definition}{Euclidean Topology on $\mathbb{R}$}{}
     A subset $S$ in $\mathbb{R}$ is said to be open if for each $x
@@ -119,6 +119,17 @@
     specifying the
     topology, we mean $\mathbb{R}$ with the euclidean topology.
 \end{remarks}
+
+\begin{example}
+    For any $a,b \in \mathbb{R}$ and $a<b$, the interval $(a,b)$ is
+    open, we refer to it as open interval.
+\end{example}
+
+\begin{example}
+    For any $a,b \in \mathbb{R}$ and $a \le b$, the interval $[a,b]$ is closed,
+    and it isn't open. When $a = b$, the interval $[a,b]$ just
+    degenerate to the singleton $\{a\}$, which is also closed.
+\end{example}
 
 To describe the euclidean topology on $\mathbb{R}$ in more convenient
 way, we introduce the notion of the basis for a topology.
@@ -159,13 +170,151 @@ intervals. Then all other open sets can be expressed as unions of
 open intervals. This leads us to the concepts of basis.
 
 \begin{definition}{Basis}{}
-    Let $(X,\tau)$ be a topological space. A collection $\mathcal{B}$ of
-    open subsets of $X$ is said to be a \textbf{basis} for the
+    Let $(X,\tau)$ be a topological space. A subcollection $\mathcal{B}$ of
+    $\tau$ is said to be a \textbf{basis} for the
     topology $\tau$ if every open set is a union of elements of $\mathcal{B}$.
 \end{definition}
+
+\begin{remarks}
+    It's obvious that $\mathcal{B} \subseteq \tau$, and there can be
+    many different
+    basis for the same topology.
+\end{remarks}
 
 \begin{example}
     Let $\mathcal{B} = \{(a,b): a,b \in \mathbb{R} \land a < b\}$.
     Then $\mathcal{B}$ is a basis for the euclidean topology on $\mathbb{R}$.
 \end{example}
-% subsection The Euclidean Topology (end)
+
+\begin{example}
+    Let $\mathcal{B} = \{\{x\}: x \in \mathbb{R}\}$.
+    Then $\mathcal{B}$ is a basis for the discrete topology on $\mathbb{R}$.
+\end{example}
+
+\begin{proposition}{}{}
+    Let $(X,\tau)$ be a topological space. A subcollection $\mathcal{B}$ of
+    $\tau$ is a basis for $\tau$ iff
+    for any open set $U$, and any point $x \in U$, there is a $B \in
+    \mathcal{B}$ s.t. $x \in B \subseteq U$.
+\end{proposition}
+
+\begin{proof}
+    we need to show
+    \begin{enumerate}
+
+        \item if $\mathcal{B}$ is a basis of $\tau$, then for any
+            open set $U$ and $x$, there exists $B \in \mathcal{B}$
+            s.t. $x \in B \subseteq U$.
+        \item if for any open set $U$ and $x$, there exits $B \in
+            \mathcal{B}$ s.t. $x \in B \subseteq U$, then
+            $\mathcal{B}$ is a basis of $\tau$.
+
+    \end{enumerate}
+    Firstly, assume $\mathcal{B}$ is a basis of $\tau$ and $U \in
+    \tau$, then $U = \bigcup_{\alpha} B_{\alpha}$. So for any $x \in
+    U$, there exits a $B_{t} \in \mathcal{B}$ s.t. $x \in B_{t} \subseteq U$.\\
+    Conversely, for any open set $U$ and any $x \in U$,
+    there exists a $B_{x} \in \mathcal{B}$ s.t. $x \in B \subseteq
+    U$. We claim that $U = \bigcup_{x \in U} B_{x}$.
+    \begin{itemize}
+        \item $B_{x} \subseteq U \text{ for all } B_{x} \implies
+            \bigcup_{x \in U} B_{x} \subseteq U$.
+        \item $x \in U \implies x \in B_{x} \implies x \in \bigcup_{x
+            \in U} B_{x}$.
+    \end{itemize}
+\end{proof}
+
+\begin{proposition}{}{}
+    Let $\mathcal{B}$ be a basis for a topology $\tau$ on a set $X$.
+    Then a subset $U$ is open iff for each $x \in U$, there exist a
+    $B \in \mathcal{B}$ s.t. $x \in B \subseteq U$.
+\end{proposition}
+
+\begin{proposition}{}{}
+    Let $\mathcal{B}$ be a basis for a topology $\tau$ on a set $X$.
+    Then a subset $U$ is open iff it is a union of elements of
+    $\mathcal{B}$.
+    \begin{align*}
+        U \in \tau \iff U = \bigcup_{\alpha} B_{\alpha}
+    \end{align*}
+\end{proposition}
+Sometimes we call it $\mathcal{B}$ generates the topology $\tau$.
+
+\begin{theorem}{}{}
+    Let $X$ be a non-empty set and let $\mathcal{B}$ be a collection
+    of subsets of $X$. Then
+    $\mathcal{B}$ is a basis for a topology on $X$ iff $\mathcal{B}$
+    has the following properties:
+    \begin{enumerate}
+        \item $X = \bigcup_{B \in \mathcal{B}} B$.
+        \item for any $B_{1},B_{2} \in \mathcal{B}$, the set $B_{1}
+            \cap B_{2}$ is a union of elements of $\mathcal{B}$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    If $\mathcal{B}$ is a basis for a topology $\tau$, then $\tau$
+    satisfies the properties\ref{def:Topological Spaces}. Obviously
+    $X$ and intersection of any two open sets are open sets. As the
+    open sets are just the unions of elements of $\mathcal{B}$, it
+    implies properties 1 and 2.\\
+    Conversely, assume $\mathcal{B}$ has properties 1 and 2, and we will
+    show that all unions of elements of $\mathcal{B}$ generate a
+    topology $\tau$ which satisfies the
+    properties\ref{def:Topological Spaces} and obviously
+    $\mathcal{B}$ is a basis of $\tau$.
+    \begin{enumerate}
+
+        \item $\varnothing$, $X$ are unions of members of $\mathcal{B}$.
+        \item Let $\{O_{\alpha}\}$ be a family of elements of $\tau$. Each
+            $O_{\alpha}$ is a union of elements of $\mathcal{B}$, hence
+            the union of $O_{\alpha}$ is also a union of elements of
+            $\mathcal{B}$
+        \item Let $T_{1}$ and $T_{2}$ be in $\tau$. $T_{1} =
+            \bigcup_{\alpha} B_{\alpha}$ where
+            $B_{\alpha} \in \mathcal{B}$, and $T_{2} =
+            \bigcup_{\beta} B_{\beta}$ where
+            $B_{\beta} \in \mathcal{B}$. Hence
+            \begin{align*}
+                T_{1} \cap T_{2} = \left(\bigcup_{\alpha}
+                B_{\alpha}\right) \bigcap \left(\bigcup_{\beta}
+                B_{\beta}\right) = \bigcup_{\alpha, \beta} \left(B_{\alpha}
+                \cap B_{\beta}\right)
+            \end{align*}
+            By assumption, each $B_{\alpha} \cap B_{\beta}$ is a
+            union of elements of $\mathcal{B}$, so is the $T_{1} \cap T_{2}$.
+    \end{enumerate}
+
+\end{proof}
+
+\begin{theorem}{}{}
+    Let $X$ be a non-empty set. $\mathcal{B}_{1}$ and
+    $\mathcal{B}_{2}$ are bases for topology $\tau_{1}$ and
+    $\tau_{2}$ respectively. Then $\tau_{1} = \tau_{2}$ iff
+    \begin{enumerate}
+
+        \item $\forall B \in \mathcal{B}_{1}, \forall x \in B,
+            \exists B' \in \mathcal{B}_{2}$ s.t. $x \in B' \subseteq B$.
+        \item $\forall  B'\in \mathcal{B}_{2}, \forall x \in B,
+            \exists B \in \mathcal{B}_{1}$ s.t. $x \in B \subseteq B'$.
+
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{example}
+    Refer to $\{(x,y) \in \mathbb{R}^{2}: a<x<b \land
+    c<y<d\}$ as the open rectangle and $\{(x,y) \in \mathbb{R}^{2}:
+    (x-a)^2 + (y-b)^2 < \epsilon\}$ as the open disc. If
+    $\mathcal{B}_{1}$ is the collection of all open rectangles and
+    $\mathcal{B}_{2}$ is the collection of all open discs, then these
+    two bases generate the same topology on $\mathbb{R}^2$ i.e. the
+    euclidean topology on $\mathbb{R}^2$.
+\end{example}
+% section Basis (end)
+\subsection{Limit Points}\label{sub:Limit Points} % (fold)
+
+% section Limit Points (end)
